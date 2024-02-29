@@ -8,6 +8,9 @@ const globalErrHandler = require('./globallErrorHandler/globalErrHandler');
 const middleWarOfAppJs = require('./middleWars/appJsMiddleWar/appJsMiddleWar');
 const healthRouter = require('./routes/healthRoute/healthRoute');
 const handleUserRouter = require('./routes/usersRoute/handleUserRoutes/handleUserRoutes');
+const orderRouter = require('./routes/orderRoute/orderRoute');
+const productRouter = require('./routes/productRoutes/productRoute');
+const agentRouter = require('./routes/agentRoute/agentRoute');
 
 //middleWares:
 middleWarOfAppJs(app, cors, express)
@@ -16,6 +19,9 @@ app.use('/health', healthRouter);
 
 //Routes:
 app.use('/users',handleUserRouter)
+app.use('/agents',agentRouter)
+app.use('/order',orderRouter)
+app.use('/products',productRouter)
 
 
 
