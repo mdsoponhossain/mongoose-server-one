@@ -18,10 +18,10 @@ middleWarOfAppJs(app, cors, express)
 app.use('/health', healthRouter);
 
 //Routes:
-app.use('/users',handleUserRouter)
-app.use('/agents',agentRouter)
-app.use('/order',orderRouter)
-app.use('/products',productRouter)
+app.use('/users', handleUserRouter)
+app.use('/agents', agentRouter)
+app.use('/order', orderRouter)
+app.use('/products', productRouter)
 
 
 

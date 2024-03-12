@@ -11,6 +11,7 @@ const productSchema = new mongoose.Schema(
         },
         product_author: {
             type: mongoose.Types.ObjectId,
+            ref:'AgentCollection',
             required: true
         },
         date: {
