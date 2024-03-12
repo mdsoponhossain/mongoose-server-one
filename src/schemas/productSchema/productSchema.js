@@ -9,14 +9,6 @@ const productSchema = new mongoose.Schema(
             type: mongoose.Schema.Types.Mixed,
             required: true
         },
-        // product_price: {
-        //     type: Number,
-        //     required: true
-        // },
-        // product_type: {
-        //     type: String,
-        //     required: true
-        // },
         product_author: {
             type: mongoose.Types.ObjectId,
             required: true

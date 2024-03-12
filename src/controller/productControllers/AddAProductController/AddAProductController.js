@@ -1,12 +1,18 @@
+const AgentModel = require("../../../models/agentModel/agentModel");
 const ProductModel = require("../../../models/productModel/productModel");
 
 async function AddAProductController(req, res) {
     try {
-        await ProductModel(req.body).save();
-        res.json({ success: 'A product is created successfully' }).status(200)
+        const addedProduct = await ProductModel(req.body).save();
+        const updatedAgent = await AgentModel.findByIdAndUpdate({ _id: req?.body?.product_author }, {
+            $push: {
+                added_product_by_agent: addedProduct?._id
+            }
+        })
+        res.json({ success: 'A product is created successfully &', updatedAgent }).status(200)
     } catch (error) {
-        res.json({ Message: 'A product is created successfully' }).status(500)
+        res.json({ Message: error.message }).status(500)
     }
 };
 
-module.exports = AddAProductController ;
+module.exports = AddAProductController;
