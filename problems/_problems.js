@@ -1,2 +1,2 @@
 // 1.When I select some keys and values of data from the Database,using populate's nested selection doesn't work.
-// Answer:
+// Answer:"const allProducts = await ProductModel.find().populate({path:'product_author',select:'agent_name -_id',}).select('-_id'); populate take two keys path mean which field for searching and select mean which field do not need."
